@@ -1,10 +1,21 @@
 
-
- <nav class="">
-	<a routerLink="/" >Home</a>
-	<a routerLink="/login" >login</a>
-	<a routerLink="/register" >register</a>
-	<a routerLink="/kalandar" >Kalandar</a>
+ <nav class="navbar navbar-expand bg-dark navbar-dark">
+	<div class="collapse navbar-collapse" id="navbarCollapse">
+	<ul class="navbar-nav mr-auto">
+		<li class="nav-item">
+			<a class="nav-link" routerLink="/" >Home</a>
+		</li>
+		<li class="nav-item">
+			<a  class="nav-link" routerLink="/login" >login</a>
+		</li>
+		<li class="nav-item">
+			<a  class="nav-link" routerLink="/register" >register</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" routerLink="/kalandar" >Kalandar</a>
+		</li>
+	</ul>
+	</div>
 </nav>
 <router-outlet></router-outlet>
 <!-- <ngb-accordion #acc="ngbAccordion">
@@ -19,7 +30,6 @@
 		</ng-template>
 	</ngb-panel>
 </ngb-accordion> -->
-<app-form></app-form>
 
 
 
