@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './components/form/form.component';
 import { NgbModule,NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { LayoutComponent } from './components/layout/layout.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 
@@ -12,7 +13,8 @@ import { LayoutComponent } from './components/layout/layout.component';
   declarations: [
     AppComponent,
     FormComponent,
-    LayoutComponent
+    LayoutComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

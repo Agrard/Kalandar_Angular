@@ -1,3 +1,17 @@
 body{
     background-color: lightskyblue;
 }
+
+.container{
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 10%;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
