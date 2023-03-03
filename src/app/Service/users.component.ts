@@ -10,11 +10,11 @@ import { ApiService } from './service';
 export class UsersComponent {
 
   title = 'apidata';
-  data: any;
-  data$: any;
+  users: any;
+  users$: any;
   constructor(private apiservice:ApiService) {}
   
   ngOnInit(): void{
-    this.data$ = this.apiservice.getdata().pipe(tap((user) => this.data = user))
+    this.users$ = this.apiservice.getdata().pipe(tap((user) => this.users = user))
   }
 }

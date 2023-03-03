@@ -2,7 +2,7 @@
 
 
 <!-- <ul>
-    <li *ngFor="let item of data$ |async">
+    <li *ngFor="let item of users$ |async">
         {{item.id}}
     </li>
 </ul> -->
@@ -20,9 +20,14 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>{{data$.id}}</td>
-
+        <tr *ngFor="let item of users$ |async">
+            <td>{{item.id}}</td>
+            <!-- <td>{{data$.first_name}}</td>
+            <td>{{data$.last_name}}</td>
+            <td>{{data$.username}}</td>
+            <td>{{data$.password}}</td>
+            <td>{{data$.email}}</td>
+            <td>{{data$.is_admin}}</td> -->
         </tr>
     </tbody>
 </table>
