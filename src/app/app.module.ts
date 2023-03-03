@@ -6,6 +6,7 @@ import { LoginComponent } from './components/Form/login/login.component';
 import { NgbModule,NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { LayoutComponent } from './components/layout/layout.component';
 import { RegisterComponent } from './components/Form/register/register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -21,7 +22,9 @@ import { RegisterComponent } from './components/Form/register/register.component
     NgbModule,
     NgbPaginationModule,
     NgbAlertModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

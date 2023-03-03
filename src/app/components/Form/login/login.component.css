@@ -24,5 +24,8 @@ label{
     font-weight: bold;
 }
 
+.errorMessage{
+    color: red;
+}
 
 

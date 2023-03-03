@@ -1,21 +1,34 @@
-<form class="container">
-    <h1>Register</h1>
+<form class="container" [formGroup]="registerForm" (ngSubmit)="registerUser()">
+    <h1>{{title}}</h1>
+    <div class="form-group mb-3">
+      <label for="firsNameLabel">First name</label>
+      <input type="text" class="form-control" id="firstNameLabel" placeholder="First Name" formControlName="first_name">
+      <span class="errorMessage" *ngIf="first_name && first_name.invalid && first_name.touched">This First name is not valid!</span>
+    </div>
+    <div class="form-group mb-3">
+      <label for="lastNameLabel">Last name</label>
+      <input type="text" class="form-control" id="lastNameLabel" placeholder="Last Name" formControlName="last_name">
+      <span class="errorMessage" *ngIf="last_name && last_name.invalid && last_name.touched">This Last name is not valid!</span>
+    </div>
       <div class="form-group mb-3">
         <label for="usernameLabel">Username</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username" required>
-        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        <input type="text" class="form-control" id="usernameLabel" placeholder="Username" formControlName="username">
+        <span class="errorMessage" *ngIf="username && username.invalid && username.touched">This Username is not valid!</span>
       </div>
       <div class="form-group mb-3">
-        <label for="passwordLabel" >Password</label>
-        <input type="password" class="form-control" id="passwordLabel" placeholder="Password" required>
+        <label for="passwordLabel">Password</label>
+        <input type="password" class="form-control" id="passwordLabel" placeholder="Password" formControlName="password">
+        <span class="errorMessage" *ngIf="password && password.invalid && password.touched">This password is not valid!</span>
       </div>
       <div class="form-group mb-3">
-        <label for="passwordConfirmLabel" >Password Confirmation</label>
-        <input type="password" class="form-control" id="passwordConfirmLabel" placeholder="Password" required>
+        <label for="passwordConfirmLabel">Password Confirmation</label>
+        <input type="password" class="form-control" id="passwordConfirmLabel" placeholder="Password Confirmation" formControlName="passwordConfirmation">
+        <span class="errorMessage" *ngIf="passwordConfirmation && passwordConfirmation.invalid && passwordConfirmation.touched">This password is not valid!</span>
       </div>
       <div class="form-group mb-3">
-        <label for="emailLabel" >Email</label>
-        <input type="email" class="form-control" id="emailLabel" placeholder="example@gmail.com" required>
+        <label for="emailLabel">Email</label>
+        <input type="email" class="form-control" id="emailLabel" placeholder="example@gmail.com" formControlName="email">
+        <span class="errorMessage" *ngIf="email && email.invalid && email.touched">This email is not valid!</span>
       </div>
       <div class="form-group form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
