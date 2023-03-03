@@ -7,10 +7,16 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit{
 
+  constructor() {}
+
+  ngOnInit(): void {
+    
+  }
+
   title="Login";
 
   loginForm = new FormGroup({
-    username: new FormControl('', [Validators.required,Validators.minLength(5),Validators.pattern('[a-zA-Z]+$')]),
+    username: new FormControl('', [Validators.required,Validators.minLength(5)]),
     password: new FormControl('',[Validators.required, Validators.minLength(5)])
   })
   loginUser(){
@@ -23,11 +29,5 @@ export class LoginComponent implements OnInit{
 
   get password(){
     return this.loginForm.get('password')
-  }
-
-  constructor() {}
-
-  ngOnInit(): void {
-    
   }
 }

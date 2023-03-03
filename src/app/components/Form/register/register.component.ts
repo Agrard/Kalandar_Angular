@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { Component,OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CustomValidators } from './CustomValidator';
 
 @Component({
   selector: 'app-register',
@@ -8,16 +9,26 @@ import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn,
 })
 export class RegisterComponent implements OnInit {
 
+  constructor() {}
+
+  ngOnInit(): void {
+  
+  }
+
   title = "Register";
 
   registerForm = new FormGroup({
+    
     first_name: new FormControl('', [Validators.required,Validators.minLength(5),Validators.pattern('[a-zA-Z]+$')]),
     last_name: new FormControl('', [Validators.required,Validators.minLength(5),Validators.pattern('[a-zA-Z]+$')]),
-    username: new FormControl('', [Validators.required,Validators.minLength(5),Validators.pattern('[a-zA-Z]+$')]), // még nem teljesen kész (ne számmal kezdődjön)
+    username: new FormControl('', [Validators.required,Validators.minLength(5)]), // még nem teljesen kész (ne számmal kezdődjön)
     password: new FormControl('', [Validators.required,Validators.minLength(5)]),
-    passwordConfirmation: new FormControl('', [Validators.required,Validators.minLength(5)]), //ugyan az szerepeljen benne mint a passwordben is!
-    email: new FormControl('', [Validators.required,Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$]')]) //Validator még nem működik!
-  })
+    confirmPassword: new FormControl('', [Validators.required,Validators.minLength(5)]),
+    email: new FormControl('', [Validators.required,Validators.pattern('"^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]) //Validator még nem működik rendesen!
+  },
+  [CustomValidators.MatchValidator('password', 'confirmPassword')]
+  )
+
   registerUser(){
     console.warn(this.registerForm.value)
   }
@@ -38,23 +49,18 @@ export class RegisterComponent implements OnInit {
     return this.registerForm.get('password')
   }
 
-  get passwordConfirmation() {
-    return this.registerForm.get('passwordConfirmation')
+  get confirmPassword() {
+    return this.registerForm.get('confirmPassword')
   }
 
-  // checkPasswords: ValidatorFn = (group: AbstractControl):  ValidationErrors | null => { 
-  //   let password = group.get('password').value;
-  //   let passwordConfirmation = group.get('passwordConfirmation').value
-  //   return password === passwordConfirmation ? null : { notSame: true }
-  // }
+  get passwordMatchError() {
+    return (
+      this.registerForm.getError('mismatch') &&
+      this.registerForm.get('confirmPassword')?.touched
+    );
+  }
 
   get email() {
     return this.registerForm.get('email')
-  }
-
-  constructor() {}
-
-  ngOnInit(): void {
-    
   }
 }
