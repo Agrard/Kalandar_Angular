@@ -21,10 +21,10 @@ export class RegisterComponent implements OnInit {
     
     first_name: new FormControl('', [Validators.required,Validators.minLength(5),Validators.pattern('[a-zA-Z]+$')]),
     last_name: new FormControl('', [Validators.required,Validators.minLength(5),Validators.pattern('[a-zA-Z]+$')]),
-    username: new FormControl('', [Validators.required,Validators.minLength(5)]), // még nem teljesen kész (ne számmal kezdődjön)
+    username: new FormControl('', [Validators.required,Validators.minLength(5)]),
     password: new FormControl('', [Validators.required,Validators.minLength(5)]),
     confirmPassword: new FormControl('', [Validators.required,Validators.minLength(5)]),
-    email: new FormControl('', [Validators.required,Validators.pattern('"^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]) //Validator még nem működik rendesen!
+    email: new FormControl('', [Validators.required,Validators.email])
   },
   [CustomValidators.MatchValidator('password', 'confirmPassword')]
   )
