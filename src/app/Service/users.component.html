@@ -1,5 +1,34 @@
 <h2 style="text-align: center;">Collect API data</h2>
 
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Last_Name</th>
+                <th>First_Name</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Email</th>
+                <th>Is_Admin</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of users$ |async">
+                <td>{{item.id}}</td>
+                <td>{{item.first_name}}</td>
+                <td>{{item.last_name}}</td>
+                <td>{{item.username}}</td>
+                <td>{{item.password}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.is_admin | yesNo}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
 
 <!-- <ul>
     <li *ngFor="let item of users$ |async">
@@ -7,27 +36,3 @@
     </li>
 </ul> -->
 
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Last_Name</th>
-            <th>First_Name</th>
-            <th>Username</th>
-            <th>Password</th>
-            <th>Email</th>
-            <th>Is_Admin</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of users$ |async">
-            <td>{{item.id}}</td>
-            <!-- <td>{{data$.first_name}}</td>
-            <td>{{data$.last_name}}</td>
-            <td>{{data$.username}}</td>
-            <td>{{data$.password}}</td>
-            <td>{{data$.email}}</td>
-            <td>{{data$.is_admin}}</td> -->
-        </tr>
-    </tbody>
-</table>
