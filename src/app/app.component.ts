@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { tap } from 'rxjs';
+import { ApiService } from './Service/service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Kalandar';
+  title = 'Pages'
 }

@@ -8,7 +8,8 @@ import { LayoutComponent } from './components/Layout/layout.component';
 import { RegisterComponent } from './components/Form/Register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainPageComponent } from './components/MainPage/main-page.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { UsersComponent } from './Service/users.component';
 
 
 @NgModule({
@@ -17,10 +18,12 @@ import { MainPageComponent } from './components/MainPage/main-page.component';
     LoginComponent,
     LayoutComponent,
     RegisterComponent,
-    MainPageComponent
+    MainPageComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     NgbModule,
     NgbPaginationModule,
     NgbAlertModule,
