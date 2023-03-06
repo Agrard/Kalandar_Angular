@@ -10,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainPageComponent } from './components/MainPage/main-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersComponent } from './Service/users.component';
-import { YesNoPipe } from './components/CustomPipe.ts/CustomPipe';
+import { YesNoPipe } from './components/CustomPipe/CustomPipe';
 
 
 @NgModule({
